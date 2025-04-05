@@ -1,4 +1,4 @@
-ENV: dev
+ENV: local
 weather_api:
   api_key: "31371bc5c3msh34f399b07961d46p192883jsn2ba7562e3194"
   base_url: "https://weatherapi-com.p.rapidapi.com/current.json"

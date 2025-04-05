@@ -171,7 +171,6 @@ local-docker.yaml
 local.yaml
 stage.yaml
 prod.yaml
-dev.yaml
 
 
 
