@@ -1,5 +1,6 @@
 import requests
 from settings.config import Config
+from settings.constants import REQUEST_TIMEOUT, SUCCESS_STATUS_CODE
 
 
 class WeatherService:
@@ -15,9 +16,9 @@ class WeatherService:
 
     def get_weather(self, city: str) -> dict:
         params = {"q": city}
-        response = requests.get(self.base_url, headers=self.headers, params=params)
+        response = requests.get(self.base_url, headers=self.headers, params=params,  timeout=REQUEST_TIMEOUT,)
 
-        if response.status_code != 200:
+        if response.status_code != SUCCESS_STATUS_CODE:
             raise Exception(f"Weather API request failed: {response.text}")
 
         data = response.json()

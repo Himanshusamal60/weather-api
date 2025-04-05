@@ -1,9 +1,7 @@
 """Utility functions required for the application."""
 
 import os
-from pathlib import Path
 import xml.etree.ElementTree as ET
-
 
 
 def get_environment() -> str:

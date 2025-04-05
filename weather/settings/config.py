@@ -1,6 +1,7 @@
 import os
-import yaml
 from pathlib import Path
+
+import yaml
 
 
 class Config:
@@ -15,7 +16,7 @@ class Config:
         if not config_path.exists():
             raise FileNotFoundError(f"Configuration file '{config_path}' not found.")
 
-        with open(config_path, "r") as file:
+        with open(config_path) as file:
             self.config = yaml.safe_load(file)
 
     def get_weather_config(self):

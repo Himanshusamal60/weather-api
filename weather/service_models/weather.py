@@ -1,6 +1,9 @@
-from pydantic import BaseModel, Field
-from service_models.base import BaseCamelModel
 from enum import Enum
+
+from pydantic import BaseModel, Field
+
+from service_models.base import BaseCamelModel
+
 
 class OutputFormat(str, Enum):
     json = "json"

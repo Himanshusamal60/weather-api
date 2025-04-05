@@ -1,10 +1,9 @@
 """The entrypoint into the FastAPI-based server."""
 import uvicorn
 from fastapi import FastAPI
-from starlette.middleware.cors import CORSMiddleware
-
-from routers import weather 
+from routers import weather
 from settings.utils import get_environment
+from starlette.middleware.cors import CORSMiddleware
 
 APP_NAME = "Weather API"
 VERSION = "0.0.1"
