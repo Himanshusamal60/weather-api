@@ -22,7 +22,7 @@ RUN pipenv install --system --deploy
 
 COPY ./ ./
 
-EXPOSE 8010
+EXPOSE 8000
 
 WORKDIR /weather/weather/
 
