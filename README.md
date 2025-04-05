@@ -1,4 +1,4 @@
-Weather API System
+#Weather API System
 
 This FastAPI-based Weather API System provides current weather data (temperature, latitude, longitude, and city) for a given city, with support for JSON or XML output formats.
 
@@ -38,7 +38,7 @@ This project is powered by a free tier of the Weather API via RapidAPI. Please a
 
 Setup
 
-Prerequisites👇
+##Prerequisites👇
 
 Python 3.11
 
@@ -56,7 +56,7 @@ pip install pipenv
 pipenv install --dev
 pipenv shell
 
-Project Structure
+##Project Structure
 
 weather-api-system/
 ├── main.py                # Entry point
