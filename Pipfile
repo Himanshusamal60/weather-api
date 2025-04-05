@@ -1,0 +1,32 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "~=0.115"
+uvicorn = "~=0.32"
+pydantic = "~=2.9"
+python-multipart = "~=0.0.20"
+numpy = "~=2.0"
+pandas = "~=2.2"
+openpyxl = "~=3.1"
+sqlalchemy = "~=2.0"
+python-dotenv = "~=1.0"
+cryptography = "~=43.0"
+pyhumps = "~=3.8"
+asyncpg = "~=0.30"
+pyyaml = "~=6.0"
+haversine = "~=2.9"
+httpx = "~=0.28"
+requests = "*"
+
+[dev-packages]
+black = "24.10"
+pre-commit = "4.0"
+ruff = "0.6"
+isort = "5.13"
+interrogate = "1.7"
+
+[requires]
+python_version = "3.11"

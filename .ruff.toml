@@ -1,0 +1,109 @@
+src = ["dynamic_pricing_system"]
+
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+# lint.select = ["E", "F", "B"]
+lint.select = ["ALL"]
+lint.ignore = [
+    #### modules
+    "ANN", # flake8-annotations
+    "COM", # flake8-commas
+    "C90", # mccabe complexity
+    "DJ",  # django
+    "EXE", # flake8-executable
+    "T10", # debugger
+    "TID", # flake8-tidy-imports
+
+    #### specific rules
+    "A002",   # Can shadow python builtin 
+    "D100",   # ignore missing docs
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D106",
+    "D107",
+    "D200",
+    "D205",
+    "D212",
+    "D400",
+    "D401",
+    "D415",
+    "E402",     # false positives for local imports
+    "E501",     # line too long
+    "EM101",    # Exceptions can contain a string literal
+    "EM102",    # Exceptions can contain f-strings
+    "INP001",   # Allow implicit packages
+    "N806",     # Allow using ALL-CAPS inside local functions
+    "PLW0603",  # Allow using `global` keyword
+    "PTH123",   # Don't recommend Path.open instead of open(path)
+    "S104",     # Allow binding to 0.0.0.0
+    "TRY002",   # Exceptions can be verbose without defining our own Exception
+    "TRY003",   # external messages in exceptions are too verbose
+    "TRY300",
+    "TD002",
+    "TD003",
+    "FIX002",   # too verbose descriptions of todos
+]
+
+fix = true
+lint.fixable = ["ALL"]
+# lint.fixable = [
+#     "A", "B", "C", "D", "E", "F", "G",
+#     "I", "N", "Q", "S", "T", "W", "ANN",
+#     "ARG", "BLE", "COM", "DJ", "DTZ", "EM",
+#     "ERA", "EXE", "FBT", "ICN", "INP", "ISC",
+#     "NPY", "PD", "PGH", "PIE", "PL", "PT", "PTH",
+#     "PYI", "RET", "RSE", "RUF", "SIM", "SLF", "TCH",
+#     "TID", "TRY", "UP", "YTT"
+#     ]
+lint.unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "__init__.py",
+]
+
+# Same as Black.
+line-length = 88
+
+# Allow unused variables when underscore-prefixed.
+lint.dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+target-version = "py311"
+
+[lint.pydocstyle]
+convention = "pep257"
+
+# Unlike Flake8, default to a complexity level of 10.
+[lint.mccabe]
+max-complexity = 10
+
+[lint.flake8-bugbear]
+extend-immutable-calls = [
+    "fastapi.Depends",
+    "fastapi.params.Depends", 
+    "fastapi.Query",
+    "fastapi.params.Query",
+]

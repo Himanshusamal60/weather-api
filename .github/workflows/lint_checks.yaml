@@ -1,0 +1,23 @@
+name: Lint Checking
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+  pull_request:
+
+jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run pre-commit checks
+        uses: cloudposse/github-action-pre-commit@v4.0.0
