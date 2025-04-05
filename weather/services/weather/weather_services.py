@@ -4,7 +4,16 @@ from settings.constants import REQUEST_TIMEOUT, SUCCESS_STATUS_CODE
 
 
 class WeatherService:
+    """Service for retrieving weather data from an external API."""
+
     def __init__(self):
+        """
+        Initialize the WeatherService with base URL and headers.
+
+        Args:
+            base_url (str): The weather API base URL.
+            headers (dict): Headers to include in the request.
+        """
         config = Config().get_weather_config()
         self.api_key = config["api_key"]
         self.base_url = config["base_url"]
@@ -15,6 +24,15 @@ class WeatherService:
         }
 
     def get_weather(self, city: str) -> dict:
+        """
+        Fetch weather data for a given city.
+
+        Args:
+            city (str): Name of the city.
+
+        Returns:
+            dict: Weather data including temperature, lat/lon, and city name.
+        """
         params = {"q": city}
         response = requests.get(self.base_url, headers=self.headers, params=params,  timeout=REQUEST_TIMEOUT,)
 

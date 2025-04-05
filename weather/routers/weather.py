@@ -10,6 +10,15 @@ weather_service = WeatherService()
 
 @router.post("/getCurrentWeather", response_model=WeatherResponse)
 async def get_current_weather(request: WeatherRequest) -> WeatherResponse | Response:
+    """
+    Fetch the current weather for a given city and return it in JSON or XML format.
+
+    Args:
+        request (WeatherRequest): The request object containing city and output_format.
+
+    Returns:
+        WeatherResponse | Response: Weather data in JSON or XML format.
+    """
     city = request.city
     output_format = request.output_format.lower()
 
